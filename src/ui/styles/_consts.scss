@@ -1,0 +1,43 @@
+:root, .figma-light {
+  --font-letter-spacing-xsmall: .005em;
+  --font-letter-spacing-small: 0;
+  --font-letter-spacing-large: -.0025em;
+  --font-letter-spacing-xlarge: -.001em;
+}
+
+.figma-dark {
+  --font-letter-spacing-xsmall: .01em;
+  --font-letter-spacing-small: .005em;
+  --font-letter-spacing-large: .0025em;
+  --font-letter-spacing-xlarge: -.001em;
+}
+
+:root {
+  --_util-scale: 1.225;
+
+  --font-line-height: calc(16px * var(--_util-scale));
+  --font-line-height-large: calc(24px * var(--_util-scale));
+
+  --font-size-xsmall: calc(11px * var(--_util-scale));
+  --font-size-small: calc(12px * var(--_util-scale));
+  --font-size-large: calc(13px * var(--_util-scale));
+  --font-size-xlarge: calc(14px * var(--_util-scale));
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  --border-radius-small: calc(2px * var(--_util-scale));
+  --border-radius-med: calc(5px * var(--_util-scale));
+  --border-radius-large: calc(6px * var(--_util-scale));
+
+  --size-xxxsmall: calc(4px * var(--_util-scale));
+  --size-xxsmall: calc(8px * var(--_util-scale));
+  --size-xsmall: calc(16px * var(--_util-scale));
+  --size-small: calc(24px * var(--_util-scale));
+  --size-medium: calc(32px * var(--_util-scale));
+  --size-large: calc(40px * var(--_util-scale));
+  --size-xlarge: calc(48px * var(--_util-scale));
+  --size-xxlarge: calc(64px * var(--_util-scale));
+  --size-xxxlarge: calc(80px * var(--_util-scale));
+}

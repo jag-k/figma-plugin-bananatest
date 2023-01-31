@@ -1,0 +1,17 @@
+label {
+  width: 100%;
+}
+
+label span {
+  font-size: var(--font-size-xsmall);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-letter-spacing-xsmall);
+  line-height: var(--font-line-height);
+  color: var(--figma-color-text-secondary);
+  height: var(--size-small);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "BananaTest",
+  "id": "1201931496477245125",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": [
+    "figma"
+  ]
+}

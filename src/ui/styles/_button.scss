@@ -1,0 +1,65 @@
+button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--border-radius-large);
+  color: var(--figma-color-text);
+  letter-spacing: var(--font-letter-spacing-small);
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: var(--font-size-xsmall);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-line-height);
+  height: var(--size-medium);
+  padding: 0 var(--size-xsmall) 0 var(--size-xsmall);
+  text-decoration: none;
+  outline: none;
+  user-select: none;
+  background-color: var(--figma-color-bg);
+  border: 2px solid var(--figma-color-border);
+  width: 100%;
+}
+
+button:enabled:active, button:enabled:focus {
+  border: 2px solid var(--figma-color-border-brand-strong);
+  padding: 0 var(--size-xsmall) 0 var(--size-xsmall);
+}
+
+button:disabled {
+  border: 2px solid var(--figma-color-border-disabled);
+  background-color: var(--figma-color-bg-disabled);
+  color: var(--figma-color-text-disabled);
+}
+
+button[type="submit"] {
+  text-align: center;
+  border-color: var(--figma-color-border-brand);
+  background-color: var(--figma-color-bg-brand);
+}
+
+button[type="submit"]:enabled:active, button[type="submit"]:enabled:focus {
+  background-color: var(--figma-color-bg-brand-pressed);
+}
+
+button[type="submit"]:hover {
+  border-color: var(--figma-color-bg-brand-hover);
+}
+
+button[type="submit"]:disabled {
+  background-color: var(--figma-color-bg-disabled);
+  border-color: var(--figma-color-border-disabled);
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-xxsmall);
+  width: 100%;
+  align-items: stretch;
+  margin-top: var(--size-xxsmall);
+}
+
+.button-group button {
+  width: auto;
+  justify-content: center;
+}

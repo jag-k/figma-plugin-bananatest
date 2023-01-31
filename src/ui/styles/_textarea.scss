@@ -1,0 +1,56 @@
+textarea {
+  font-size: var(--font-size-xsmall);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-letter-spacing-xsmall);
+  line-height: var(--font-line-height);
+  position: relative;
+  overflow: visible;
+  resize: vertical;
+  width: 100%;
+  min-height: min-content;
+  margin: 1px 0;
+  padding: var(--size-xxsmall) var(--size-xxxsmall) var(--size-xxsmall) var(--size-xxsmall);
+  color: var(--figma-color-text);
+  border: 1px solid var(--figma-color-border);
+  border-radius: var(--border-radius-small);
+  outline: none;
+  background-color: var(--figma-color-bg);
+  overflow-y: auto;
+}
+
+textarea:hover, textarea:placeholder-shown:hover {
+  color: var(--figma-color-text-hover);
+}
+
+textarea::selection {
+  color: var(--figma-color-text-hover);
+  background-color: var(--figma-color-bg-brand-hover);
+}
+
+textarea::placeholder {
+  color: var(--figma-color-text-disabled);
+  border: 1px solid transparent;
+}
+
+textarea:focus:placeholder-shown {
+  border: 1px solid var(--figma-color-bg-brand);
+  outline: 1px solid var(--figma-color-bg-brand-pressed);
+  outline-offset: -2px;
+}
+
+textarea:active, textarea:focus {
+  color: var(--figma-color-text);
+  border: 1px solid var(--figma-color-bg-brand);
+  outline: 1px solid var(--figma-color-bg-brand);
+  outline-offset: -2px;
+}
+
+textarea:disabled, textarea:disabled:hover {
+  position: relative;
+  color: var(--figma-color-text-disabled);
+  border: 1px solid var(--figma-color-border-disabled);
+}
+
+textarea:disabled:active {
+  outline: none;
+}

@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--figma-color-bg);
+  color: var(--figma-color-text);
+  margin: var(--size-xxsmall) var(--size-xsmall);
+}
+
+body, form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: var(--font-size-small);
+  align-items: flex-start;
+  gap: var(--size-xxxsmall);
+  padding: 0;
+}
+
+body > *, form > * {
+  margin: 0;
+}
+
+form {
+  margin: var(--size-xxsmall) 0;
+  width: 100%;
+}
+
+form, label {
+  display: flex;
+  flex-direction: column;
+}
+
+*:focus-visible {
+  outline-color: var(--figma-color-border-brand);
+}
+

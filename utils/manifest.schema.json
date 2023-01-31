@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Figma Plugin manifest.json",
+  "required": [
+    "name",
+    "id",
+    "api",
+    "main",
+    "editorType"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "default": "Figma Plugin",
+      "description": "The name of the plugin, as it will appear in the menu.",
+      "title": "The name of the plugin"
+    },
+    "id": {
+      "type": "string",
+      "default": "",
+      "title": "The plugin ID",
+      "description": "The plugin ID to publish updates to. This ID will be assigned to you by Figma and is typically obtained using the \"Create new Plugin\" feature, which will generate a manifest file with a new id. You can also get a new plugin ID at the time of publishing your plugin."
+    },
+    "api": {
+      "type": "string",
+      "default": "1.0.0",
+      "title": "The plugin api version",
+      "description": "The version of the Figma API used by the plugin. We recommend updating to the latest version whenever possible to get the latest features, bug fixes, and documentation. However, we don't auto-upgrade the api version of plugins to give you the chance to test your plugin against the new version."
+    },
+    "main": {
+      "type": "string",
+      "default": "code.js",
+      "title": "The path to main JS script",
+      "description": "The relative file path to the Javascript code of your plugin."
+    },
+    "ui": {
+      "oneOf": [
+        {
+          "type": "string",
+          "default": "ui.html"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": "ui.html",
+      "title": "Specify HTML file/files to view",
+      "description": "Used to specify HTML file/files that can be used in the iframe modal via figma.showUI, if you choose to have one."
+    },
+    "editorType": {
+      "type": "array",
+      "default": [
+        "figma"
+      ],
+      "title": "The type of Figma platform",
+      "description": "This allows you to specify the editor that your plugin is intended for and will impact which editor your plugin appears in.",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "figma",
+          "figjam"
+        ]
+      },
+      "examples": [
+        [
+          "figma"
+        ],
+        [
+          "figjam"
+        ],
+        [
+          "figma",
+          "figjam"
+        ]
+      ]
+    },
+    "parameters": {
+      "type": "array",
+      "description": "Used to specify the list of parameters that your plugin accepts as input. Can also be defined on menu items.",
+      "items": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "Icon name",
+            "key": "icon-name",
+            "description": "Enter the name of the icon you want to insert."
+          },
+          {
+            "name": "Size",
+            "key": "size",
+            "description": "Enter the size of the icon you want to insert.",
+            "allowFreeform": true
+          },
+          {
+            "name": "Color",
+            "key": "color",
+            "description": "Enter the color of the icon you want to insert.",
+            "allowFreeform": true,
+            "optional": true
+          }
+        ],
+        "required": [
+          "name",
+          "key"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A name property that specifies the name given to this parameter in the UI."
+          },
+          "key": {
+            "type": "string",
+            "description": "A key property that is a unique id used to identify the value of this property in ParameterValues."
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "description": "An optional description property that gives a more detailed description that is displayed in the UI."
+          },
+          "allowFreeform": {
+            "type": "boolean",
+            "default": false,
+            "description": "An optional allowFreeform property that allows the user to enter any value for this parameter, not just those suggested by the plugin."
+          },
+          "optional": {
+            "type": "boolean",
+            "default": false,
+            "description": "An optional optional property that indicates the parameter can be skipped in the UI."
+          }
+        }
+      }
+    },
+    "parameterOnly": {
+      "type": "boolean",
+      "description": "Allows you to specify that your plugin can only be launched with parameters. You must also specify a valid parameter list: parameters. Can also be defined on menu items with parameters.",
+      "default": true
+    }
+  },
+  "if": {
+    "type": "object",
+    "properties": {
+      "parameterOnly": true
+    },
+    "required": [
+      "parameterOnly"
+    ]
+  },
+  "then": {
+    "required": ["parameters"]
+  },
+
+  "examples": [
+    {
+      "name": "Figma Plugin",
+      "id": "123",
+      "api": "1.0.0",
+      "main": "code.js",
+      "editorType": [
+        "figma"
+      ],
+      "ui": "ui.html"
+    }
+  ]
+}
